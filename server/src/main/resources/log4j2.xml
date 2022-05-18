@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+        <File name="server" fileName="logs/server-${date:yyyy-MM-dd'_'HH-mm-ss}.log">
+            <PatternLayout>
+                <Pattern>%d %p %c{1.} [%t] %m %ex%n</Pattern>
+            </PatternLayout>
+        </File>
+        <File name="error" fileName="logs/error-${date:yyyy-MM-dd'_'HH-mm-ss}.log">
+            <PatternLayout>
+                <Pattern>%d %p %c{1.} [%t] %m %ex%n</Pattern>
+            </PatternLayout>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Root level="trace">
+            <AppenderRef ref="Console" level="TRACE"/>
+            <AppenderRef ref="server" level="TRACE"/>
+            <AppenderRef ref="error" level="ERROR"/>
+        </Root>
+    </Loggers>
+</Configuration>

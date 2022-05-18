@@ -1,0 +1,69 @@
+   add
+            name
+    21.2
+        1.23
+8
+
+    red
+italy
+31
+12
+location name
+add_if_max
+name_max
+21.2
+1.23
+300
+2001
+1
+1
+0
+0
+white
+spain
+31
+12
+loc2
+add_if_min
+name_min
+2
+-3.11
+2
+2001
+1
+1
+0
+0
+black
+vatican
+32
+0.17
+
+
+
+
+show
+group
+update    2
+updated name
+0
+   -0.1
+3
+            1998
+     5
+14
+23
+11
+black
+russia
+-811
+13.12
+loc
+
+    print_birthdays
+count_by_birthday 01 01 2001
+shuffle
+    show
+remove 1
+execute   client\src\main\resources\script1.txt
+info
