@@ -1,0 +1,154 @@
+[ {
+  "id" : 11,
+  "name" : "name",
+  "coordinates" : {
+    "x" : 21.2,
+    "y" : 1.23
+  },
+  "creationDate" : "2022-05-14T22:04:44.1482191Z",
+  "height" : 8,
+  "birthday" : null,
+  "hairColor" : "RED",
+  "nationality" : "ITALY",
+  "location" : {
+    "x" : 31,
+    "y" : 12.0,
+    "name" : "location name"
+  }
+}, {
+  "id" : 10,
+  "name" : "abcd",
+  "coordinates" : {
+    "x" : 21.0,
+    "y" : 2112.0
+  },
+  "creationDate" : "2022-05-14T22:02:50.4920676Z",
+  "height" : 6,
+  "birthday" : "1998-05-14T00:00:00",
+  "hairColor" : "RED",
+  "nationality" : "ITALY",
+  "location" : {
+    "x" : 12,
+    "y" : 12.0,
+    "name" : "location"
+  }
+}, {
+  "id" : 2,
+  "name" : "UPDATED NAME 1312",
+  "coordinates" : {
+    "x" : 0.0,
+    "y" : -0.1
+  },
+  "creationDate" : "2022-05-14T22:04:44.1761441Z",
+  "height" : 3,
+  "birthday" : "1998-05-14T23:11:00",
+  "hairColor" : "BLACK",
+  "nationality" : "RUSSIA",
+  "location" : {
+    "x" : -811,
+    "y" : 13.12,
+    "name" : "loc21"
+  }
+}, {
+  "id" : 4,
+  "name" : "1",
+  "coordinates" : {
+    "x" : 1.0,
+    "y" : 133.0
+  },
+  "creationDate" : "2022-04-30T21:14:25.1888636Z",
+  "height" : 213,
+  "birthday" : "0012-01-02T21:01:00",
+  "hairColor" : "WHITE",
+  "nationality" : null,
+  "location" : {
+    "x" : 123,
+    "y" : 213.21312,
+    "name" : "dsdfs"
+  }
+}, {
+  "id" : 12,
+  "name" : "name_max",
+  "coordinates" : {
+    "x" : 21.2,
+    "y" : 1.23
+  },
+  "creationDate" : "2022-05-14T22:04:44.154203Z",
+  "height" : 300,
+  "birthday" : "2001-01-01T00:00:00",
+  "hairColor" : "WHITE",
+  "nationality" : "SPAIN",
+  "location" : {
+    "x" : 31,
+    "y" : 12.0,
+    "name" : "loc2"
+  }
+}, {
+  "id" : 3,
+  "name" : "0",
+  "coordinates" : {
+    "x" : 12.0,
+    "y" : 21.0
+  },
+  "creationDate" : "2022-05-14T22:03:37.6679224Z",
+  "height" : 21,
+  "birthday" : null,
+  "hairColor" : "BROWN",
+  "nationality" : null,
+  "location" : {
+    "x" : 21,
+    "y" : 12.0,
+    "name" : "name3"
+  }
+}, {
+  "id" : 6,
+  "name" : "name_min",
+  "coordinates" : {
+    "x" : 2.0,
+    "y" : -3.11
+  },
+  "creationDate" : "2022-05-02T16:58:33.8891007Z",
+  "height" : 2,
+  "birthday" : "2001-01-01T00:00:00",
+  "hairColor" : "BLACK",
+  "nationality" : "VATICAN",
+  "location" : {
+    "x" : 32,
+    "y" : 0.17,
+    "name" : ""
+  }
+}, {
+  "id" : 9,
+  "name" : "name",
+  "coordinates" : {
+    "x" : 21.2,
+    "y" : 1.23
+  },
+  "creationDate" : "2022-05-04T20:53:51.963005Z",
+  "height" : 8,
+  "birthday" : null,
+  "hairColor" : "RED",
+  "nationality" : "ITALY",
+  "location" : {
+    "x" : 31,
+    "y" : 12.0,
+    "name" : "location name"
+  }
+}, {
+  "id" : 13,
+  "name" : "12",
+  "coordinates" : {
+    "x" : 12.0,
+    "y" : 3231.0
+  },
+  "creationDate" : "2022-05-16T20:41:40.262855Z",
+  "height" : 2121,
+  "birthday" : null,
+  "hairColor" : "BLACK",
+  "nationality" : null,
+  "location" : {
+    "x" : 12,
+    "y" : 314.0,
+    "name" : "12213"
+  }
+} ]

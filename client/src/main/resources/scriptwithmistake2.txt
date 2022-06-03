@@ -1,0 +1,3 @@
+print_birthdays
+clear
+execute invalidscriptname.txt
