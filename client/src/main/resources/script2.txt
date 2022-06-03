@@ -1,1 +1,0 @@
-execute client\src\main\resources\script1.txt

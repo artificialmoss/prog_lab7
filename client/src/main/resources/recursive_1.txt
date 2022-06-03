@@ -1,4 +1,0 @@
-info
-count_by_birthday 1 1 12
-execute client\src\main\resources\recursive_2.txt
-show

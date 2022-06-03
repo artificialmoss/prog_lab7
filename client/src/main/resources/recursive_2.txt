@@ -1,3 +1,0 @@
-group
-execute client\src\main\resources\recursive_3.txt
-remove 1
