@@ -1,4 +1,4 @@
-package configuration.exceptions;
+package dbConfig.exceptions;
 
 import utils.exceptions.NoFileException;
 

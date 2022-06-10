@@ -1,7 +1,9 @@
-package configuration;
+package dbConfig;
 
-import configuration.exceptions.NoUserInfoException;
+import dbConfig.exceptions.NoUserInfoException;
 import log.Log;
+
+import java.util.NoSuchElementException;
 
 public class ConfigLoader {
     private String username;
@@ -16,6 +18,8 @@ public class ConfigLoader {
     public void getConfig() {
         try {
             loader.loadConfig();
+            username = loader.getUsername();
+            password = loader.getPassword();
         } catch (NoUserInfoException e) {
             try {
                 username = reader.readUsername();
@@ -24,6 +28,10 @@ public class ConfigLoader {
                 Log.getLogger().fatal("Couldn't read user info to access the database. " +
                         "The application will be closed.");
                 System.exit(-1);
+            } catch (NoSuchElementException e3) {
+                Log.getLogger().info("You have entered the end of file symbol. " +
+                        "The application will be closed");
+                System.exit(-2);
             }
         }
         Log.getLogger().info("User info has been found.");

@@ -52,7 +52,7 @@ public class RequestManager {
                 String input = mode.getScanner().nextLine().trim().toLowerCase();
                 if (authorizationRequests.containsKey(input)) {
                     CommandRequest authRequest = authorizationRequests.get(input).setArgs();
-                    ResponseDTO responseDTO = handleAuthRequest(authRequest);
+                    ResponseDTO responseDTO = handleRequest(authRequest);
                     responseManager.showResponse(responseDTO.getMessage());
                     if (responseDTO.getStatus() == Status.OK) {
                         this.user = authRequest.getUser();
@@ -130,16 +130,12 @@ public class RequestManager {
      * @param c Command request
      * @return Response
      */
-    public String handleRequest(CommandRequest c) {
+    public ResponseDTO handleRequest(CommandRequest c) {
         if (c instanceof Runnable) {
             ((Runnable) c).run();
-            return null;
+            return new ResponseDTO();
         }
-        return connectionManager.handleRequest(c, getScriptMode()).getMessage();
-    }
-
-    public ResponseDTO handleAuthRequest(CommandRequest c) {
-        return connectionManager.handleRequest(c, false);
+        return connectionManager.handleRequest(c, getScriptMode());
     }
 
     public void start() {
@@ -169,7 +165,7 @@ public class RequestManager {
                 String[] input = s.split("\\s+");
                 CommandRequest commandRequest = getCommandRequest(input);
                 if (commandRequest != null) {
-                    responseManager.showResponse(handleRequest(commandRequest),
+                    responseManager.showResponse(handleRequest(commandRequest).getMessage(),
                             !getScriptMode() || commandRequest.showResponseInScriptMode());
                 }
             } else {

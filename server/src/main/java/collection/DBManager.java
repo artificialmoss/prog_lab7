@@ -13,7 +13,8 @@ import java.util.Vector;
 
 //todo dao pattern
 public class DBManager {
-    private final String url = "jdbc:postgresql://pg:5432/studs";
+    //private final String url = "jdbc:postgresql://pg:5432/studs"; // для гелиоса
+    private final String url = "jdbc:postgresql://localhost:5432/studs"; // для идеи
     private final String username;
     private final String password;
     private final Logger logger = Log.getLogger();

@@ -1,10 +1,11 @@
-package configuration;
+package dbConfig;
 
-import configuration.exceptions.NoUserInfoException;
+import dbConfig.exceptions.NoUserInfoException;
 
 import java.util.Scanner;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 public class ConsoleConfigReader {
     private final int MAX_ERROR_COUNT;
@@ -14,13 +15,13 @@ public class ConsoleConfigReader {
         MAX_ERROR_COUNT = maxErrorCount;
     }
 
-    private <T> T readValue(String inputPrompt, String requirements, Function<String, T> parseValue,
-                            Predicate<T> checkValue) {
+    private <T> T readValue(String inputPrompt, String requirements, Supplier<String> supplier,
+                            Function<String, T> parseValue, Predicate<T> checkValue) {
         int errorCount = 0;
         T res;
         System.out.println(inputPrompt + " (" + requirements + "): ");
         while (errorCount != MAX_ERROR_COUNT) {
-            String input = s.nextLine().trim();
+            String input = supplier.get();
             try {
                 res = parseValue.apply(input);
                 if (checkValue.test(res)) {
@@ -41,11 +42,15 @@ public class ConsoleConfigReader {
 
     public String readUsername() {
         return readValue("Input username", "must contain only english letters and numbers",
-                s -> s, s -> s.matches("^[a-zA-Z0-9]*$"));
+                () -> s.nextLine().trim(), x -> x, x -> x.matches("^[a-zA-Z0-9]*$"));
     }
 
+    //fixme change to readpassword (also on client!)
+    // - (at the last moment because System.console() is not accessible in IDEA
     public String readPassword() {
+        //return readValue("Input password", "can contain special characters, can't countain spaces",
+                //() -> new String(System.console().readPassword()), s -> s, s -> s.matches("\\S+"));
         return readValue("Input password", "can contain special characters, can't countain spaces",
-                s -> s, s -> s.matches("\\S+"));
+                () -> s.nextLine().trim(), s -> s, s -> s.matches("\\S+"));
     }
 }

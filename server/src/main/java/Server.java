@@ -8,7 +8,9 @@ import run.ServerManager;
  */
 public class Server {
     public static void main(String[] args) {
-        String userConfigPath = ".pgpass";
+        //String userConfigPath = ".pgpass";
+        String userConfigPath = "server\\src\\main\\resources\\.pgpass";
+        // ssh -L5432:pg:5432 s336774@se.ifmo.ru -p2222
 
         int defaultPort = 1312;
         int port;

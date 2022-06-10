@@ -1,6 +1,6 @@
-package configuration;
+package dbConfig;
 
-import configuration.exceptions.NoUserInfoException;
+import dbConfig.exceptions.NoUserInfoException;
 import log.Log;
 import org.apache.logging.log4j.Logger;
 import utils.GetFile;

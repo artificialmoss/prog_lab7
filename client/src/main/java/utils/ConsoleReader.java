@@ -6,17 +6,19 @@ import utils.exceptions.NullElementException;
 import java.util.Scanner;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 public interface ConsoleReader {
 
-    default <T> T readValue(Scanner s, ResponseManager responseManager, int MAX_ERROR_COUNT,
-                    String inputPrompt, String requirements, Function<String, T> parseValue, Predicate<T> checkValue,
+    default <T> T readValue(ResponseManager responseManager, int MAX_ERROR_COUNT,
+                    String inputPrompt, String requirements, Supplier<String> supplier,
+                    Function<String, T> parseValue, Predicate<T> checkValue,
                     boolean nullAllowed) throws WrongArgumentException, NullElementException {
         int errorCount = 0;
         T res;
         responseManager.showMessage(inputPrompt + " (" + requirements + "): ");
         while (errorCount != MAX_ERROR_COUNT) {
-            String input = s.nextLine().trim();
+            String input = supplier.get();
             if (input.isEmpty() && nullAllowed) {
                 throw new NullElementException();
             }

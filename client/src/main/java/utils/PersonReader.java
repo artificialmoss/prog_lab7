@@ -30,8 +30,8 @@ public class PersonReader implements ConsoleReader {
 
     private <T> T readValue(String inputPrompt, String requirements, Function<String, T> parseValue, Predicate<T> checkValue,
                             boolean nullAllowed) throws WrongArgumentException, NullElementException {
-        return readValue(s, responseManager, MAX_ERROR_COUNT, inputPrompt, requirements, parseValue,
-                checkValue, nullAllowed);
+        return readValue(responseManager, MAX_ERROR_COUNT, inputPrompt, requirements, () -> s.nextLine().trim(),
+                parseValue, checkValue, nullAllowed);
     }
 
     private String readName() {
